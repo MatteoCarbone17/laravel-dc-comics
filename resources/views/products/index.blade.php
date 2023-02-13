@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <table class="table">
                     <thead>
@@ -19,24 +19,26 @@
                         <th scope="col">Series</th>
                         <th scope="col">Type</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Settings</th>
                       </tr>
                     </thead>
                     <tbody>
                         @foreach ($products as $product)
-                            
                         <tr>
                             <th scope="row">{{ $product->id }}</th>
                             <td>{{ $product->title }}</td>
                             <td>{{ $product->series }}</td>
                             <td>{{ $product->type }}</td>
                             <td>{{ $product->price }}&euro; </td>
+                            <td>
+                                <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
+                            </td>
                         </tr>
                     </tbody>
                     @endforeach
                 </table>
 
             </div>
-
         </div>
     </main>
 </body>
