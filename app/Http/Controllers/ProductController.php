@@ -47,7 +47,7 @@ class ProductController extends Controller
         $newComic->type =  $data_comic['type'];
         $newComic->save();
 
-        return redirect()->route('products.show',  $newComic->id);
+        return redirect()->route('products.show', $newComic->id);
     }
 
     /**
