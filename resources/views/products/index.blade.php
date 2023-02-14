@@ -11,6 +11,9 @@
     <main>
         <div class="container">
             <div class="row">
+                <div class="d-flex justify-content-end p-4 ">
+                    <a class="btn btn-primary btn-lg" href="{{ route('products.create') }}" > Add new Comic</a>  
+                </div>
                 <table class="table">
                     <thead>
                       <tr>
