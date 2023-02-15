@@ -39,7 +39,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Sale data</label>
-                            <input type="number" name="sale_date"  class="form-control" value="{{ $product->sale_date}}"  id="">
+                            <input type="text" name="sale_date"  class="form-control" value="{{ $product->sale_date}}"  id="">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Type </label>

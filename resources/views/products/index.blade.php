@@ -38,8 +38,8 @@
                             <td>{{ $product->sale_date }}</td>
                             <td>
                                 <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
-                                <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
-                                <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
+                                <a class="btn btn-warning"  href="{{ route('products.edit' , $product->id) }}" >Edit</a>
+                                <a class="btn btn-danger"  href="{{ route('products.show' , $product->id) }}" >Delete</a>
                             </td>
                         </tr>
                     </tbody>
