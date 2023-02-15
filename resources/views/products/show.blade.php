@@ -21,6 +21,7 @@
               <h6>{{ $product->series }}</h6>
               <span>{{ $product->type }} </span>
               <span>{{ $product->price }} </span>
+              <span>{{ $product->sale_date }} </span>
               <p class="">{{ $product->description }}</p>
             </div>
         </div>

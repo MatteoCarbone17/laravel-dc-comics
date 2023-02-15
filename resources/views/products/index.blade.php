@@ -8,6 +8,7 @@
     @vite('resources/js/app.js')
 </head>
 <body>
+    @dump(Route::currentRouteName())
     <main>
         <div class="container">
             <div class="row">
@@ -22,6 +23,7 @@
                         <th scope="col">Series</th>
                         <th scope="col">Type</th>
                         <th scope="col">Price</th>
+                        <th scope="col">Date</th>
                         <th scope="col">Settings</th>
                       </tr>
                     </thead>
@@ -33,7 +35,10 @@
                             <td>{{ $product->series }}</td>
                             <td>{{ $product->type }}</td>
                             <td>{{ $product->price }}&euro; </td>
+                            <td>{{ $product->sale_date }}</td>
                             <td>
+                                <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
+                                <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
                                 <a class="btn btn-success"  href="{{ route('products.show' , $product->id) }}" >Show</a>
                             </td>
                         </tr>
