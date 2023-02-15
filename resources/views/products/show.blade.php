@@ -26,7 +26,7 @@
             </div>
         </div>
         <div>
-            <a class="btn btn-primary"  href="{{ route('products.index') }}" >Return to homepage</a>
+            <a class="btn btn-primary"  href="{{ route('products.index') }}" >Return to Homepage</a>
         </div>
     </div>
 </section>
