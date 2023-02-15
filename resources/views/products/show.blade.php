@@ -25,5 +25,8 @@
               <p class="">{{ $product->description }}</p>
             </div>
         </div>
+        <div>
+            <a class="btn btn-primary"  href="{{ route('products.index') }}" >Return to home page</a>
+        </div>
     </div>
 </section>
