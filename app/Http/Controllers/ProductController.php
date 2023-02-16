@@ -40,14 +40,27 @@ class ProductController extends Controller
         // dd(  $request);
         // dd(   $data_comic);
         $request->validate([
-            'title' => 'required|min:2|max:150',
-            'description'  => 'string|min:2|required',
-            'thumb'  => 'string|min:2|required|max:255',
+            'title' => 'required|min:5|max:150',
+            'description'  => 'min:2|required',
+            'thumb'  => 'min:5|required|max:255',
             'price'  => 'required',
-            'series' => 'string|min:2|required|max:255',
+            'series' => 'min:2|required|max:255',
             'sale_date' => 'required',
              'type' => 'required',
-        ]);
+        ],
+        [
+            'title.required' => 'Mio caro utente inserisci almeno 5 parole , altrimenti come lo chiamo il fumetto?' , 
+            'title.min' => 'Mio caro utente inserisci almeno 5 parole , altrimenti come lo chiamo il fumetto?' ,
+            'title.max' => 'Mio caro utente ora stiamo esagerando, massimo 150 words' ,
+            'description.required' => 'Mio caro utente inserisci almeno una piccola descrizione di 5 parole', 
+            'description.min' => 'Mio caro utente inserisci almeno una piccola descrizione di 5 parole' ,
+            'thumb.required' => 'Carissimo utente campo obbligatorio, dammi un link' , 
+            'price.required' => 'Carissimo utente campo obbligatorio, gratis? mmhh non credo' , 
+            'series.required' => 'Carissimo utente campo obbligatorio' , 
+            'sale_date.required' => 'Carissimo utente campo obbligatorio' , 
+            'type.required' => 'Carissimo utente campo obbligatorio' , 
+        ],
+    );
         $newComic = new Product();
         $newComic->title =  $data_comic['title'];
         $newComic->description =  $data_comic['description'];
