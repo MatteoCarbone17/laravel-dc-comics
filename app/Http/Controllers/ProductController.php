@@ -41,7 +41,7 @@ class ProductController extends Controller
         // dd(   $data_comic);
         $request->validate([
             'title' => 'required|min:5|max:150',
-            'description'  => 'min:2|required',
+            'description'  => 'required|min:2',
             'thumb'  => 'min:5|required|max:255',
             'price'  => 'required',
             'series' => 'min:2|required|max:255',
@@ -54,7 +54,9 @@ class ProductController extends Controller
             'title.max' => 'Mio caro utente ora stiamo esagerando, massimo 150 words' ,
             'description.required' => 'Mio caro utente inserisci almeno una piccola descrizione di 5 parole', 
             'description.min' => 'Mio caro utente inserisci almeno una piccola descrizione di 5 parole' ,
-            'thumb.required' => 'Carissimo utente campo obbligatorio, dammi un link' , 
+            'thumb.required' => 'Carissimo utente campo obbligatorio, dammi un link' ,
+            'thumb.min' => 'Carissimo utente inserisci piu di 5 parole' ,
+            'thumb.max' => 'Carissimo utente massimo 255 words' , 
             'price.required' => 'Carissimo utente campo obbligatorio, gratis? mmhh non credo' , 
             'series.required' => 'Carissimo utente campo obbligatorio' , 
             'sale_date.required' => 'Carissimo utente campo obbligatorio' , 
