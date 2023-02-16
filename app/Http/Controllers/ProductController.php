@@ -37,6 +37,17 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $data_comic =  $request->all();
+        // dd(  $request);
+        // dd(   $data_comic);
+        $request->validate([
+            'title' => 'required|min:2|max:150',
+            'description'  => 'string|min:2|required',
+            'thumb'  => 'string|min:2|required|max:255',
+            'price'  => 'required',
+            'series' => 'string|min:2|required|max:255',
+            'sale_date' => 'required',
+             'type' => 'required',
+        ]);
         $newComic = new Product();
         $newComic->title =  $data_comic['title'];
         $newComic->description =  $data_comic['description'];
@@ -46,7 +57,6 @@ class ProductController extends Controller
         $newComic->sale_data =  $data_comic['sale_date'];
         $newComic->type =  $data_comic['type'];
         $newComic->save();
-
         return redirect()->route('products.show', $newComic->id);
     }
 
@@ -71,7 +81,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::findOrFail($id);
-        return view('products.edit',compact('product'));
+        return view('products.edit', compact('product'));
     }
 
     /**
@@ -92,11 +102,10 @@ class ProductController extends Controller
         // $newComic->series = $form_data_comic['series'];
         // $newComic->sale_data = $form_data_comic['sale_date'];
         // $newComic->type = $form_data_comic['type'];
-        
+
         $newComic->update($form_data_comic);
 
         return redirect()->route('products.show', $newComic->id);
-        
     }
 
     /**

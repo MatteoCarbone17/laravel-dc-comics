@@ -13,7 +13,7 @@
 </body>
 </html>
 <section class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="" style="">
             <img src="{{ $product->thumb }}" class="card-img-top"  style=" width: 10rem;" alt="...">
             <div class="card-body">
