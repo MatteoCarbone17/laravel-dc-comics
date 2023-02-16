@@ -112,6 +112,32 @@ class ProductController extends Controller
     {
         $form_data_comic = $request->all();
         $newComic = Product::findOrFail($id);
+        $request->validate([
+            'title' => 'required|min:5|max:150',
+            'description'  => 'required|min:10',
+            'thumb'  => 'min:5|required|max:255',
+            'price'  => 'required',
+            'series' => 'min:5|required|max:255',
+            'sale_date' => 'required',
+             'type' => 'required',
+        ],
+        [
+            'title.required' => 'Mio caro utente inserisci almeno 5 parole , altrimenti come lo chiamo il fumetto?' , 
+            'title.min' => 'Mio caro utente inserisci almeno 5 parole , altrimenti come lo chiamo il fumetto?' ,
+            'title.max' => 'Mio caro utente ora stiamo esagerando, massimo 150 words' ,
+            'description.required' => 'Mio caro utente inserisci almeno una piccola descrizione di 10 parole', 
+            'description.min' => 'Mio caro utente inserisci almeno una piccola descrizione di 5 parole' ,
+            'thumb.required' => 'Carissimo utente campo obbligatorio, dammi un link' ,
+            'thumb.min' => 'Carissimo utente inserisci piu di 5 parole' ,
+            'thumb.max' => 'Carissimo utente massimo 255 words' , 
+            'price.required' => 'Carissimo utente campo obbligatorio, gratis? mmhh non credo' , 
+            'series.required' => 'Carissimo utente campo obbligatorio' , 
+            'series.min' => 'Mio caro utente inserisci almeno 5 parole' ,
+            'series.max' => 'Mio caro utente ora stiamo esagerando, massimo 255 words' ,
+            'sale_date.required' => 'Carissimo utente campo obbligatorio' , 
+            'type.required' => 'Carissimo utente campo obbligatorio' , 
+        ],
+    );
         // $newComic->title = $form_data_comic['title'];
         // $newComic->description =$form_data_comic['description'];
         // $newComic->thumb = $form_data_comic['thumb'];

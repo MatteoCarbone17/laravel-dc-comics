@@ -17,6 +17,17 @@
                     <form class="mt-4" action="{{ route('products.update', $product->id )}}" method="POST" >
                         @method('PUT')
                         @csrf
+                        @if (($errors->has('title')))
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->get('title') as $error)
+                                <li>
+                                    {{ $error }}
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
                         <div class="mb-3">
                           <label for="" class="form-label">Title</label>
                           <input type="text" name="title" class="form-control" id="" value="{{ $product->title }}" >
